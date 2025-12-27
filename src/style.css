@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@font-face {
+  font-family: "font";
+  src: url(../font/Estedad-FDThin.ttf);
+}
+* {
+  font-family: "font";
+  font-weight: bold;
+}
+@theme {
+  --color-Secondary: #fdb713;
+}
+/* کامپوننت مربوط به سدان و کوپه */
+@layer components {
+  .cars-wrapper {
+    @apply w-10/12 h-32 flex justify-between items-center gap-2 mt-38;
+    .car-box {
+      @apply relative w-full h-full border border-gray-300 rounded-lg overflow-hidden flex flex-col justify-center items-center bg-white;
+      .car-title {
+        @apply absolute top-2
+             w-full h-8
+             flex justify-center items-center 
+             font-bold text-2xl
+             text-black;
+        font-family: font;
+      }
+      .car-img {
+        @apply absolute top-6;
+        width: 232px;
+        height: 110px;
+        z-index: 1;
+      }
+      .car-bottom-bar {
+        @apply absolute w-11/12 h-4
+           rounded-md bg-[#FDB713] -bottom-2;
+      }
+    }
+  }
+}
+/* کامپوننت کارت ها */
+@layer components {
+  .card-title {
+    @apply font-[font] font-bold text-right text-[#494949]
+         text-sm leading-[140%];
+  }
+  .card-label {
+    @apply text-[#868686] font-[font] font-normal text-sm
+          text-right w-[26px] h-[22px];
+  }
+  .card-title-label-date {
+    @apply w-fit text-[#494949] font-[font] font-bold text-sm;
+  }
+  .garanty-text {
+    @apply text-gray-900 font-[font] font-medium text-[12px] leading-[100%] text-right text-ellipsis;
+    z-index: 20;
+  }
+  .price2-text {
+    @apply text-gray-800 font-[font] text-sm;
+  }
+  .reserve-btn {
+    @apply w-full h-10 bg-blue-700 text-white
+        text-lg
+         rounded-md px-4 py-1
+         flex items-center justify-center gap-2
+          hover:bg-blue-800;
+  }
+}
